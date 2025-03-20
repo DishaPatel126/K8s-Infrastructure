@@ -6,8 +6,9 @@ spec:
   capacity:
     storage: 1Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce  
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard  
   gcePersistentDisk:
     pdName: disha-pv-disk
     fsType: ext4
@@ -18,7 +19,8 @@ metadata:
   name: disha-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce  
+  storageClassName: standard  # 
   resources:
     requests:
       storage: 1Gi
