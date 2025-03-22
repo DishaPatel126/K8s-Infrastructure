@@ -1,5 +1,5 @@
 provider "google" {
-  project = "disha-k8s-project"
+  project = "disha-k8"
   region  = "us-central1"
 }
 
@@ -23,11 +23,4 @@ resource "google_container_node_pool" "primary_nodes" {
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
-}
-
-resource "google_compute_disk" "pv_disk" {
-  name  = "disha-pv-disk"
-  type  = "pd-standard"
-  zone  = "us-central1-a"
-  size  = 1
 }
