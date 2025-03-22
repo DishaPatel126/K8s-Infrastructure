@@ -1,26 +1,11 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: disha-pv
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce  
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: standard  
-  gcePersistentDisk:
-    pdName: disha-pv-disk
-    fsType: ext4
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: disha-pvc
 spec:
   accessModes:
-    - ReadWriteOnce  
-  storageClassName: standard  # 
+    - ReadWriteOnce
+  storageClassName: standard
   resources:
     requests:
       storage: 1Gi
